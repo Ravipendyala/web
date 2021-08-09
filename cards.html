@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Test</title>
+	<script>
+		data = [{"id":"123", "desc":"one"},{"id":"234", "desc":"two"},{"id":"345", "desc":"three"}];
+		emptyObj = {"id":"", "desc":""};
+		position = -1;
+		counter = 0;
+		function showObjects() {
+			for (const o of data) {
+				counter++;
+				if (counter == position) {
+					showForm(o);
+				}
+				else {
+					showCard(o);
+				}
+			}
+			if (position == -1) {
+				showForm(emptyObj);
+			}
+		}
+
+		function showCard(obj) {
+			console.log("CARD: " + obj["id"] + ": " + obj["desc"]);
+		}
+
+		function showForm(obj) {
+			console.log("FORM: " + obj["id"] + ": " + obj["desc"]);
+		}
+	</script>
+</head>
+<body onload=showObjects()>
+
+</body>
+</html>
